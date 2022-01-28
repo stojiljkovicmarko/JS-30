@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.clock {
+  width: 12rem;
+  height: 12rem;
+  border: 20px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0px 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock::before,
+.clock::after {
+  /* 12-6 and 9-3 hour markers */
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background: black;
+  z-index: 0;
+  left: 50%;
+  margin-left: -5px;
+  top: 0;
+}
+
+.clock::after {
+  /* 9-3 time marker specifically*/
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.clock::before,
+.clock::after,
+.clock .marker {
+  /* All hour markers */
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background: black;
+  z-index: 0;
+  left: 50%;
+  margin-left: -5px;
+  top: 0;
+}
+
+.clock .marker {
+  background: gray;
+  width: 8px;
+  margin-left: -4px;
+}
+
+.clock .marker.oneseven {
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.clock .marker.twoeight {
+  -moz-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  -webkit-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.clock .marker.fourten {
+  -moz-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  -webkit-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.clock .marker.fiveeleven {
+  -moz-transform: rotate(150deg);
+  -ms-transform: rotate(150deg);
+  -webkit-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+
+.inner-face {
+  position: relative;
+  width: 88%;
+  height: 88%;
+  background: white;
+  -moz-border-radius: 1000px;
+  -webkit-border-radius: 1000px;
+  border-radius: 1000px;
+  z-index: 1000;
+  left: 6%; /* center DIV horizontally (100%-88% / 2) */
+  top: 6%; /* center DIV vertically (100%-88% / 2) */
+}
+
+.inner-face::before {
+  /* clock center dot small */
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  margin-left: -9px;
+  margin-top: -9px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 0 30px gray;
+}
+
+.inner-face::after {
+  content: "BELGRADE";
+  position: absolute;
+  width: 100%;
+  font: normal 0.8em Arial;
+  color: gray;
+  text-align: center;
+  top: 80%;
+}
+
+.hand,
+.hand.hour {
+  position: absolute;
+  width: 8px; /* default width of hands/ hour hand */
+  height: 30%; /* default height of hands/ hour hand */
+  top: 20%; /* offset hand vertically by 20% so its bottom is at center of clock */
+  left: 50%; /* offset hand horiz by 50% so its left is at center of clock */
+  margin-left: -6px; /* Account for hand width to center hand horizonally */
+  background: black;
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -moz-transform-origin: bottom; /* Set transform origin to center bottom */
+  -ms-transform-origin: bottom;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+  z-index: -1;
+  -moz-box-shadow: 0 0 3px gray;
+  -webkit-box-shadow: 0 0 3px gray;
+  box-shadow: 0 0 3px gray;
+}
+
+.hand.minute {
+  /* minute hand (2nd longest) */
+  height: 45%;
+  top: 5%;
+  width: 6px;
+  margin-left: -3px;
+}
+
+.hand.second {
+  /* second hand (longest) */
+  height: 50%;
+  width: 2px;
+  margin-left: -1px;
+  top: 0;
+  background: red;
+}
+
+
+@media only screen and (min-width: 525px) {
+    .clock {
+        width: 16rem;
+        height: 16rem;
+    }
+
+    .inner-face::after{
+        font-size: 1em;
+    }
+}
+
+@media only screen and (min-width: 625px) {
+    .clock {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .inner-face::after{
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 825px) {
+    .clock {
+        width: 25rem;
+        height: 25rem;
+    }
+
+    .inner-face::after{
+        font-size: 1.6em;
+    }
+}

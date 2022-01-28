@@ -1,0 +1,46 @@
+
+
+body {
+    --tint: #ffc600;
+    --spacing: 10px;
+    --blur: 1px;
+    background-color: #193549;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main label {
+    font-size: 1.3rem;
+}
+
+.main input {
+    width: 32%;
+    margin-bottom: 2%;
+}
+
+.image-container {
+    width: 50%;
+    margin: 0 auto;
+    background-color: var(--tint);
+    padding: var(--spacing);
+}
+
+img {
+    width: 100%;
+    filter: blur(var(--blur));
+}
+
+.js {
+    color: var(--tint);
+}
