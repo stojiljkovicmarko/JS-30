@@ -1,4 +1,4 @@
-# VanillaJS - 30 projects[^1]
+# Simple projects including HTML, CSS and VanillaJS - 30 projects[^1]
 
 ## There are 30 projects for VanillaJS
 ```
