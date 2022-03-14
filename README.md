@@ -1,6 +1,6 @@
 # Simple projects including HTML, CSS and VanillaJS - 30 projects[^1]
 
-## There are 30 projects for VanillaJS
+## List of projects done:
 ```
  1. Drums app
  2. Clock app
