@@ -6,6 +6,7 @@
  2. Clock app
  3. CSS variables
  4. Array functions
+ 5. Flex gallery
  ...projects done so far...
 ```
 
