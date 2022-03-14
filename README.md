@@ -11,5 +11,5 @@
 ```
 
 
-[^1]: These projects are based on tutorials from this guy here:
+[^1]: These projects are based on tutorials from:
 [JavaScript30](https://github.com/wesbos/JavaScript30.git)
