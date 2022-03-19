@@ -16,10 +16,18 @@ const findPlaceMatches = (textToFind, cities) => {
 
 const displayMatches = (e) => {
   const matches = findPlaceMatches(e.target.value, cities);
-  const htmlToShow = matches.map(
-    (place) => `
-    <li>${place.city}, ${place.state}</li>
-    `).join("");
+  let htmlToShow;
+  if (matches.length !== 0) {
+    htmlToShow = matches
+      .map(
+        (place) => `
+        <li><div>${place.city}, ${place.state}</div><div>${place.population}<div></li>
+        `
+      )
+      .join("");
+  } else {
+    htmlToShow = "<li>Nothing found...</li>";
+  }
   document.querySelector(".places").innerHTML = htmlToShow;
 };
 

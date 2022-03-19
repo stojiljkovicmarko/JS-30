@@ -1,0 +1,53 @@
+body {
+  background: #ffdb58;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 40rem;
+  max-width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  width: 60%;
+  height: 2rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 5px solid #f7f7f7;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+.places {
+  padding: 0;
+  margin: 0;
+  width: 60%;
+  position: relative;
+  top: -3px;
+}
+
+.places li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0.9rem;
+  border-bottom: 1px solid #d8d8d8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+}
+
+.places li:nth-child(even) {
+  transform: skewX(4deg) translateY(3px) scale(1.001);
+  background: linear-gradient(to bottom, #ffffff 0%, #efefef 100%);
+}
+
+.places li:nth-child(odd) {
+  transform: skewX(-4deg) translateY(3px);
+  background: linear-gradient(to top, #ffffff 0%, #efefef 100%);
+}
