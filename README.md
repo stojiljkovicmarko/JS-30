@@ -7,6 +7,7 @@
  3. CSS variables
  4. Array functions
  5. Flex gallery
+ 6. AJAX simple
  ...projects done so far...
 ```
 
