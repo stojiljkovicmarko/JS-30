@@ -40,6 +40,7 @@ input {
   padding: 0.8rem 0.9rem;
   border-bottom: 1px solid #d8d8d8;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.14);
+  text-transform: capitalize;
 }
 
 .places li:nth-child(even) {
@@ -50,4 +51,8 @@ input {
 .places li:nth-child(odd) {
   transform: skewX(-4deg) translateY(3px);
   background: linear-gradient(to top, #ffffff 0%, #efefef 100%);
+}
+
+.highlight {
+    background-color: #ffdb58;
 }

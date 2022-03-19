@@ -14,19 +14,28 @@ const findPlaceMatches = (textToFind, cities) => {
   });
 };
 
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const displayMatches = (e) => {
   const matches = findPlaceMatches(e.target.value, cities);
+  const regex = new RegExp(e.target.value, "gi");
   let htmlToShow;
   if (matches.length !== 0) {
     htmlToShow = matches
-      .map(
-        (place) => `
-        <li><div>${place.city}, ${place.state}</div><div>${place.population}<div></li>
-        `
-      )
+      .map((place) => {
+        const cityName = place.city.replace(regex, `<span class="highlight">${e.target.value}</span>`);
+        const stateName = place.state.replace(regex, `<span class="highlight">${e.target.value}</span>`);
+        return `
+        <li><div>${cityName}, ${stateName}</div><div>${numberWithCommas(
+          place.population
+        )}<div></li>
+        `;
+      })
       .join("");
   } else {
-    htmlToShow = "<li>Nothing found...</li>";
+    htmlToShow = "<li>No results...</li>";
   }
   document.querySelector(".places").innerHTML = htmlToShow;
 };
